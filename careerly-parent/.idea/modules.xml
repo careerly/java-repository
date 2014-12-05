@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/careerly-base/careerly-base.iml" filepath="$PROJECT_DIR$/careerly-base/careerly-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/careerly-core/careerly-core.iml" filepath="$PROJECT_DIR$/careerly-core/careerly-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/careerly-parent.iml" filepath="$PROJECT_DIR$/careerly-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/careerly-test/careerly-test.iml" filepath="$PROJECT_DIR$/careerly-test/careerly-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/careerly-web/careerly-web.iml" filepath="$PROJECT_DIR$/careerly-web/careerly-web.iml" />
+    </modules>
+  </component>
+</project>
