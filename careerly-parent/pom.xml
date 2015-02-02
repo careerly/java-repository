@@ -8,12 +8,322 @@
     <artifactId>careerly-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <!--==================================== -->
+    <!-- careerly子模块 -->
+    <!--==================================== -->
     <modules>
         <module>careerly-core</module>
         <module>careerly-web</module>
         <module>careerly-base</module>
         <module>careerly-test</module>
     </modules>
+
+    <!--==================================== -->
+    <!--属性文件 -->
+    <!--==================================== -->
+    <properties>
+        <org.springframework.version>4.1.4.RELEASE</org.springframework.version>
+        <org.apache.commons.email.version>1.2</org.apache.commons.email.version>
+        <org.apache.poi.version>3.9</org.apache.poi.version>
+        <org.apache.commons-fileupload.version>1.2.2</org.apache.commons-fileupload.version>
+        <commons-io.version>2.4</commons-io.version>
+        <joda-time.version>2.3</joda-time.version>
+        <org.jsoup.version>1.7.3</org.jsoup.version>
+        <org.quartz-scheduler.version>2.2.1</org.quartz-scheduler.version>
+        <org.apache.httpcomponents.version>4.2.5</org.apache.httpcomponents.version>
+        <org.apache.velocity.version>1.7</org.apache.velocity.version>
+        <org.apache.velocity.tools.version>2.0</org.apache.velocity.tools.version>
+        <cglib.version>2.2</cglib.version>
+        <org.aspectj.version>1.6.8</org.aspectj.version>
+        <commons.digester.version>2.1</commons.digester.version>
+    </properties>
+
+    <dependencies>
+
+        <!--==================================== -->
+        <!-- spring 核心 依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- apache邮件发送 依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-email</artifactId>
+            <version>${org.apache.commons.email.version}</version>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- apache excel处理 依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${org.apache.poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${org.apache.poi.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>stax</groupId>
+                    <artifactId>stax-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- apache fileupload 依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${org.apache.commons-fileupload.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- 时间工具 依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- 定时作业调度 依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${org.quartz-scheduler.version}</version>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- httpclient 依赖包 -->
+        <!--==================================== -->
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+            <version>${org.apache.httpcomponents.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>${org.apache.httpcomponents.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>${org.apache.httpcomponents.version}</version>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- java网页解析工具包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${org.jsoup.version}</version>
+        </dependency>
+
+        <!--============================================================== -->
+        <!-- Json-jackson 依赖包 用途@ResponseBody，普通的Json操作使用fastJson -->
+        <!--============================================================== -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+
+        <!--============================================================== -->
+        <!-- 序列化库，Kryo -->
+        <!--============================================================== -->
+        <dependency>
+            <groupId>com.esotericsoftware.kryo</groupId>
+            <artifactId>kryo</artifactId>
+            <version>2.24.0</version>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- velocity及工具 依赖包 -->
+        <!--==================================== -->
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-collections</artifactId>
+                    <groupId>commons-collections</groupId>
+                </exclusion>
+            </exclusions>
+            <version>${org.apache.velocity.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-tools</artifactId>
+            <version>${org.apache.velocity.tools.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.struts</groupId>
+                    <artifactId>struts-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.struts</groupId>
+                    <artifactId>struts-taglib</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.struts</groupId>
+                    <artifactId>struts-tiles</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-digester</groupId>
+                    <artifactId>commons-digester</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-validator</groupId>
+                    <artifactId>commons-validator</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-beanutils</groupId>
+                    <artifactId>commons-beanutils</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dom4j</groupId>
+                    <artifactId>dom4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-collections</artifactId>
+                    <groupId>commons-collections</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- cglib 依赖包 声明式事务需要 -->
+        <!--==================================== -->
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${org.aspectj.version}</version>
+        </dependency>
+
+
+        <!--======================= -->
+        <!--二维码工具包 -->
+        <!--======================= -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>zxingorg</artifactId>
+            <version>2.2</version>
+            <classifier>sources</classifier>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-fileupload</groupId>
+                    <artifactId>commons-fileupload</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--======================= -->
+        <!--xml解析工具包 -->
+        <!--======================= -->
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>${commons.digester.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
 
 
 </project>
