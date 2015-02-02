@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="careerly-test:war">
-    <output-path>$PROJECT_DIR$/careerly-test/target</output-path>
-    <root id="archive" name="careely-test.war">
-      <element id="artifact" artifact-name="careerly-test:war exploded" />
-    </root>
-  </artifact>
-</component>
