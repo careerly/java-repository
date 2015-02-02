@@ -37,6 +37,9 @@
         <cglib.version>2.2</cglib.version>
         <org.aspectj.version>1.6.8</org.aspectj.version>
         <commons.digester.version>2.1</commons.digester.version>
+        <com.alibaba.fastjson.version>1.1.35</com.alibaba.fastjson.version>
+        <com.google.guava.version>13.0.1</com.google.guava.version>
+        <org.slf4j.version>1.7.5</org.slf4j.version>
     </properties>
 
     <dependencies>
@@ -322,6 +325,55 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--======================= -->
+        <!--fastjson工具包 -->
+        <!--======================= -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${com.alibaba.fastjson.version}</version>
+        </dependency>
+
+        <!--==================================== -->
+        <!-- Google guava 依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${com.google.guava.version}</version>
+        </dependency>
+
+
+
+        <!--==================================== -->
+        <!-- 日志 依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+
+
 
     </dependencies>
 
