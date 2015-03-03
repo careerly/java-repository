@@ -22,6 +22,16 @@
         </dependency>
 
 
+        <!--==================================== -->
+        <!-- 引入公用模块 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>com.careerly</groupId>
+            <artifactId>careerly-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

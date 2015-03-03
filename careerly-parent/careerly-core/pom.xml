@@ -9,7 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <!--==================================== -->
+    <!-- 核心model -->
+    <!--==================================== -->
+    <groupId>com.careerly</groupId>
     <artifactId>careerly-core</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
 
 
 </project>

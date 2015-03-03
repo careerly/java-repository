@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd        
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+       default-autowire="byName">
+
+    <!-- 启动对@AspectJ注解的支持  -->
+    <aop:aspectj-autoproxy/>
+
+    <!-- spring组件扫描 -->
+    <context:component-scan base-package="com.careerly.*"/>
+
+    <!-- 默认的注解映射的支持 -->
+    <context:annotation-config/>
+
+    <!-- Spring属性占位符 -->
+    <bean class="com.careerly.common.support.ReloadablePropertySourcesPlaceholderConfigurer"
+          p:locations="classpath:*.properties" p:ignoreUnresolvablePlaceholders="true"/>
+
+    <!-- 加载所有的spring配置 -->
+    <import resource="classpath*:spring/spring.xml"/>
+
+
+</beans>

@@ -12,11 +12,7 @@ import java.lang.annotation.Target;
 
 /**
  * 实现描述：标识不需要Json序列化的属性
- * 
- * @author simon
- * @version v1.0.0
- * @see
- * @since 2013-8-2 下午5:29:16
+ *
  */
 @Target({ ElementType.FIELD, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)

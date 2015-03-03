@@ -17,13 +17,14 @@
         <module>careerly-web</module>
         <module>careerly-base</module>
         <module>careerly-test</module>
+        <module>careerly-spider</module>
     </modules>
 
     <!--==================================== -->
     <!--属性文件 -->
     <!--==================================== -->
     <properties>
-        <org.springframework.version>3.1.4.RELEASE</org.springframework.version>
+        <org.springframework.version>3.2.5.RELEASE</org.springframework.version>
         <org.apache.commons.email.version>1.2</org.apache.commons.email.version>
         <org.apache.poi.version>3.9</org.apache.poi.version>
         <org.apache.commons-fileupload.version>1.2.2</org.apache.commons-fileupload.version>
@@ -41,9 +42,20 @@
         <com.google.guava.version>13.0.1</com.google.guava.version>
         <org.slf4j.version>1.7.5</org.slf4j.version>
         <commons-configuration.version>1.5</commons-configuration.version>
+        <org.apache.tomcat.version>7.0.30</org.apache.tomcat.version>
     </properties>
 
     <dependencies>
+
+        <!--==================================== -->
+        <!-- 数据库连接池依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>${org.apache.tomcat.version}</version>
+        </dependency>
+
 
         <!--==================================== -->
         <!-- spring 核心 依赖包 -->
@@ -402,6 +414,28 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
+
+
+        <!--==================================== -->
+        <!-- hibernate依赖包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>3.2.6.ga</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>cglib</artifactId>
+                    <groupId>cglib</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.3.1.GA</version>
+        </dependency>
+
 
         <!--==================================== -->
         <!-- web工程 依赖包 -->

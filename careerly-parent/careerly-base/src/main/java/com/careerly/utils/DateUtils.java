@@ -12,14 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * 实现描述：时间操作工具类
- *
- * @author zixin.zhang
- * @version v1.0.0
- * @see
- * @since 13-8-12上午10:37
- */
 public class DateUtils {
     public final static String DATE_CHINESE_PATTERN = "yyyy年MM月dd日";
 
