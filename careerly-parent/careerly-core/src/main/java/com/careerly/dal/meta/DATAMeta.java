@@ -11,6 +11,8 @@
 package com.careerly.dal.meta;
 
 
+import java.io.Serializable;
+
 /**
  * 实现描述: 基本的数据接口
  *
@@ -24,10 +26,11 @@ public interface DATAMeta<T> {
     /**
      * 获取一个实例对象
      *
+     * @param c
      * @param id
      * @return
      */
-    public T get(int id);
+    public T get(Class<T> c,Serializable id);
 
     /**
      * 增加一个实例对象

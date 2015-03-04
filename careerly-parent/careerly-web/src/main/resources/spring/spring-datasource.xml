@@ -28,10 +28,10 @@
     <!--==================================== -->
     <!-- 配置数据库连接池 -->
     <!--==================================== -->
-    <bean id="ticketDataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
+    <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
         <property name="poolProperties">
             <bean class="org.apache.tomcat.jdbc.pool.PoolProperties">
-                <property name="driverClassName" value="org.postgresql.Driver"/>
+                <property name="driverClassName" value="${careerly.database.driver}"/>
                 <property name="url" value="${careerly.database.url}"/>
                 <property name="username" value="${careerly.database.username}"/>
                 <property name="password" value="${careerly.database.password}"/>
@@ -56,7 +56,43 @@
     </bean>
 
 
+    <!--==================================== -->
+    <!-- sessionFactory 配置 -->
+    <!--==================================== -->
+    <!-- hibernate session -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <prop key="hibernate.use_sql_comments">${hibernate.use_sql_comments}</prop>
+            </props>
+        </property>
 
+        <!-- autoscan annotation for hiberante config -->
+        <property name="packagesToScan">
+            <list>
+                <value>com.careerly.dal.entity</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <!--==================================== -->
+    <!-- 配置事务管理器 -->
+    <!--==================================== -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+
+    <!--==================================== -->
+    <!-- 使用注解管理事务 -->
+    <!--==================================== -->
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 
 
 </beans>

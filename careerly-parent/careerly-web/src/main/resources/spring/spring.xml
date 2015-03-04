@@ -24,6 +24,4 @@
     <!--==================================== -->
     <import resource="spring-datasource.xml"/>
 
-
-    ＜imp
 </beans>

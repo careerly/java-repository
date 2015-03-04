@@ -2,6 +2,8 @@ package com.careerly.dal.api;
 
 import com.careerly.dal.meta.DATAMeta;
 
+import java.io.Serializable;
+
 /**
  * 实现描述:接口访问基本信息类
  *
@@ -13,7 +15,7 @@ import com.careerly.dal.meta.DATAMeta;
 public class ApiGenericDAO<T> implements DATAMeta<T> {
 
     @Override
-    public T get(int id) {
+    public T get(Class<T> c, Serializable id) {
         return null;
     }
 

@@ -5,7 +5,7 @@ import com.careerly.dal.entity.User;
 import org.hibernate.Session;
 
 /**
- * 实现描述:
+ * 实现描述:用户访问仓库
  *
  * @author shengyahuang
  * @version v1.0.0
@@ -14,7 +14,5 @@ import org.hibernate.Session;
  */
 public class UserRepository extends HibernateGenericDAO<User> implements DATAMeta<User> {
 
-    public UserRepository(Session session) {
-        super(session);
-    }
+
 }

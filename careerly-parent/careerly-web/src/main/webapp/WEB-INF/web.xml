@@ -67,10 +67,17 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <!-- 过滤所有路径(spring 3.0 REST 风格支持) -->
         <servlet-name>springmvc</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>*.json</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <!-- 过滤所有路径(spring 3.0 REST 风格支持) -->
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
 
     <!-- ====================================================================== -->
@@ -79,11 +86,6 @@
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.html</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

@@ -29,7 +29,7 @@
 	<!-- responseBody json 支持 -->
 	<!-- ======================================= -->
 	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="messageConverters">
 			<list>
 				<bean class="com.careerly.common.support.msgconverter.CsvHttpMessageConverter"
@@ -48,10 +48,10 @@
 	<!-- 其余Exception统一跳转到错误页面 -->
 	<!-- ============================================================== -->
 	<bean id="exceptionResolver"
-		class="com.qunar.piao.common.exception.resolver.ControllerExceptionResolver">
+		class="com.careerly.common.support.resolver.ControllerExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
-				<prop key="java.lang.Exception">anonymous/error</prop>
+				<prop key="java.lang.Exception">views/error</prop>
 			</props>
 		</property>
 	</bean>
@@ -73,5 +73,17 @@
 			<value>4096</value>
 		</property>
 	</bean>
+
+
+    <!-- 配置JSP视图 -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+        <property name="order" value="1"/>
+    </bean>
+
+
 
 </beans>

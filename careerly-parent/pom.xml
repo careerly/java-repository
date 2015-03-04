@@ -43,6 +43,7 @@
         <org.slf4j.version>1.7.5</org.slf4j.version>
         <commons-configuration.version>1.5</commons-configuration.version>
         <org.apache.tomcat.version>7.0.30</org.apache.tomcat.version>
+        <hibernate.version>4.2.11.Final</hibernate.version>
     </properties>
 
     <dependencies>
@@ -385,21 +386,6 @@
             <version>1.0.13</version>
         </dependency>
 
-        <!--==================================== -->
-        <!-- Mybatis及Spring集成 依赖包 -->
-        <!--==================================== -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.2.8</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>1.2.2</version>
-        </dependency>
-
 
         <!--==================================== -->
         <!-- spring mvc 依赖包 -->
@@ -419,21 +405,12 @@
         <!--==================================== -->
         <!-- hibernate依赖包 -->
         <!--==================================== -->
+
+        <!-- hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate</artifactId>
-            <version>3.2.6.ga</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>cglib</artifactId>
-                    <groupId>cglib</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-annotations</artifactId>
-            <version>3.3.1.GA</version>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
 
 
@@ -464,6 +441,16 @@
                     <groupId>commons-logging</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+
+        <!--==================================== -->
+        <!-- mysql驱动包 -->
+        <!--==================================== -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.22</version>
         </dependency>
 
     </dependencies>

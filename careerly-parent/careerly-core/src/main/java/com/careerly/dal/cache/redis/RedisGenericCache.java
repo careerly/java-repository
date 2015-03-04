@@ -2,6 +2,8 @@ package com.careerly.dal.cache.redis;
 
 import com.careerly.dal.meta.DATAMeta;
 
+import java.io.Serializable;
+
 /**
  * 实现描述:redis基本对象
  *
@@ -13,7 +15,7 @@ import com.careerly.dal.meta.DATAMeta;
 public class RedisGenericCache<T> implements DATAMeta<T> {
 
     @Override
-    public T get(int id) {
+    public T get(Class<T> c, Serializable id) {
         return null;
     }
 
